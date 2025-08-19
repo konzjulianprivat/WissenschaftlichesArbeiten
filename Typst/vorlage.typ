@@ -32,7 +32,7 @@
 // Define logo paths
 #let logo-left = "pictures/DHBW_MA_Logo.jpg"
 #let logo-right = "pictures/SAP_R_grad_scrn.jpg"
-#let title = "Optimierung von Large-Language-Model basierten Datenextraktionsprozessen zur Strukturierung interner E-Mail-Kommunikationsdaten"
+#let title = "Analyse der Einsatzmöglichkeiten von State-of-the-Art Large Graph Models gegenüber Large Language Models zur Verarbeitung von strukturierten Daten"
 #let nameAuthor = "Julian Konz"
 
 // Define header and footer content
@@ -97,12 +97,12 @@
 #v(-0.5em)
 
 // Confidentiality marker (SPERRVERMERK)
-#align(center, text(weight: "semibold", size: title-size, "SPERRVERMERK"))
+#align(center, text(weight: "semibold", size: title-size, "Research Paper"))
 
 #v(-0.5em)
 
 // Type of Thesis
-#align(center, text(weight: "semibold", size: subtitle-size, "Zweite Projektarbeit"))
+#align(center, text(weight: "semibold", size: subtitle-size, "W3WI_702: Schlüsselqualifikationen II"))
 
 // Course of Studies
 #align(center, text(size: body-size, "aus dem Studiengang Wirtschaftsinformatik Sales & Consulting an der Dualen Hochschule Baden-Württemberg Mannheim"))
@@ -123,7 +123,7 @@
 
   // Date
   text(weight: "semibold", size: body-size, "Bearbeitungszeitraum:"),
-  text(size: body-size, "17.02.2025 - 05.05.2025"),
+  text(size: body-size, "12.05.2025 - 24.08.2025"),
 
   // Student ID and Course
   text(weight: "semibold", size: body-size, "Matrikelnummer, Kurs:"),
@@ -151,25 +151,24 @@
   text(size: body-size, ""),
 
   // Company Supervisor
-  text(weight: "semibold", size: body-size, "Betreuer der Ausbildungsfirma:"),
-  stack(
-    spacing: small-spacing,
-    text(size: body-size, "Felix Bartler"),
-    text(size: body-size, "felix.bartler@sap.com"),
-    text(size: body-size, "+496227750225")
-  ),
+  // text(weight: "semibold", size: body-size, "Betreuer der Ausbildungsfirma:"),
+  // stack(
+  //   spacing: small-spacing,
+  //   text(size: body-size, "Felix Bartler"),
+  //   text(size: body-size, "felix.bartler@sap.com"),
+  //   text(size: body-size, "+496227750225")
+  // ),
 
   // Spacer
   text(size: body-size, ""),
   text(size: body-size, ""),
 
   // University Supervisor
-  text(weight: "semibold", size: body-size, "Wissenschaftliche Betreuerin:"),
+  text(weight: "semibold", size: body-size, "Wissenschaftlicher Betreuer:"),
   stack(
     spacing: small-spacing,
-    text(size: body-size, "Prof. Dr. Sarah Detzler"),
-    text(size: body-size, "sarah.detzler@dhbw.de"),
-    text(size: body-size, "+4962141051412")
+    text(size: body-size, "Dr. Jörg Astheimer"),
+    text(size: body-size, "joerg.astheimer@dhbw.de"),
   )
 )
 
@@ -217,7 +216,7 @@
 #set text(hyphenate: true, lang: "de")
 
 = Eidesstattliche Erklärung
-#align(left, text("Ich versichere hiermit, dass ich meine Projektarbeit mit dem Thema: „Titel“ selbstständig verfasst und keine anderen als die angegebenen Quellen und Hilfsmittel benutzt habe. Ich versichere zudem, dass die eingereichte elektronische Fassung mit der gedruckten Fassung übereinstimmt."))
+#align(left, text("Ich versichere hiermit, dass ich meine Projektarbeit mit dem Thema 'Analyse der Einsatzmöglichkeiten von State-of-the-Art Large Graph Models gegenüber Large Language Models zur Verarbeitung von strukturierten Daten selbstständig verfasst und keine anderen als die angegebenen Quellen und Hilfsmittel benutzt habe. Ich versichere zudem, dass die eingereichte elektronische Fassung mit der gedruckten Fassung übereinstimmt."))
 
 // Space for the signature
 #v(7em)
@@ -241,12 +240,12 @@
 //-----------------------------------------------------------------------------------
 // Sperrvermerk
 //-----------------------------------------------------------------------------------
-#pagebreak()
-= Sperrvermerk
-// Sperrvermerk Content
-Die nachfolgende Arbeit enthält vertrauliche Daten und Informationen der SAP SE, Dietmar-Hopp-Allee 16, 69190 Walldorf, Deutschland. Der Inhalt dieser Arbeit darf weder als Ganzes noch in Auszügen Personen außerhalb des Prüfungsprozesses und des Evaluationsverfahrens zugänglich gemacht werden. Veröffentlichungen oder Vervielfältigungen der Projektarbeit #box("- auch auszugsweise -") sind ohne ausdrückliche Genehmigung der SAP SE in einem unbegrenzten Zeitrahmen nicht gestattet. Über den Inhalt dieser Arbeit ist Stillschweigen #box("zu wahren.")
+// #pagebreak()
+// = Sperrvermerk
+// // Sperrvermerk Content
+// Die nachfolgende Arbeit enthält vertrauliche Daten und Informationen der SAP SE, Dietmar-Hopp-Allee 16, 69190 Walldorf, Deutschland. Der Inhalt dieser Arbeit darf weder als Ganzes noch in Auszügen Personen außerhalb des Prüfungsprozesses und des Evaluationsverfahrens zugänglich gemacht werden. Veröffentlichungen oder Vervielfältigungen der Projektarbeit #box("- auch auszugsweise -") sind ohne ausdrückliche Genehmigung der SAP SE in einem unbegrenzten Zeitrahmen nicht gestattet. Über den Inhalt dieser Arbeit ist Stillschweigen #box("zu wahren.")
 
-SAP und die SAP Logos sind eingetragene Warenzeichen der SAP SE. Die Wiedergabe von Gebrauchsnamen, Handelsnamen, Warenbezeichnungen usw. in dieser Arbeit berechtigt auch ohne besondere Kennzeichnung nicht zu der Annahme, dass solche Namen im Sinne der Warenzeichen- und Markenschutz-Gesetzgebung als frei zu betrachten wären und daher von jedem benutzt #box("werden dürfen.")
+// SAP und die SAP Logos sind eingetragene Warenzeichen der SAP SE. Die Wiedergabe von Gebrauchsnamen, Handelsnamen, Warenbezeichnungen usw. in dieser Arbeit berechtigt auch ohne besondere Kennzeichnung nicht zu der Annahme, dass solche Namen im Sinne der Warenzeichen- und Markenschutz-Gesetzgebung als frei zu betrachten wären und daher von jedem benutzt #box("werden dürfen.")
 
 //-----------------------------------------------------------------------------------
 // Gleichbehandlung
@@ -261,9 +260,9 @@ In dieser Praxisarbeit wird aus Gründen der besseren Lesbarkeit das generische 
 #pagebreak()
 = Disclaimer
 // Disclaimer Content
-Ein Teil der Literatur, die für die Anfertigung dieser Arbeit genutzt wird, ist nur über die Plattformen o'Reilly, SAP Multi Experience Platform und MyEducator abrufbar. Bei diesen Ressourcen existieren keine Seitennummern, es wird bei Verweisen stattdessen die Kapitelnummer oder der Kapitelnamen angegeben.
+Ein Teil der Literatur, die für die Anfertigung dieser Arbeit genutzt wird, sind nicht als Buchfassung verfügbar. Bei diesen Ressourcen existieren keine Seitennummern, es wird bei Verweisen stattdessen die Kapitelnummer oder auf die zugehörige Webseite im Literaturverzeichnis angegeben.
 
-Um den Lesefluss zu verbessern, werden Abbildungen, Prompts und Tabellen, die den Lesefluss stören, im Anhang platziert, auf den im Text zusätzlich #box([verwiesen wird.])
+Um den Lesefluss zu verbessern, werden Abbildungen und Tabellen, die den Lesefluss stören, im Anhang platziert, auf den im Text zusätzlich #box([verwiesen wird.])
 
 //-----------------------------------------------------------------------------------
 // Abstract
@@ -276,7 +275,7 @@ Um den Lesefluss zu verbessern, werden Abbildungen, Prompts und Tabellen, die de
   row-gutter: 18pt,
   column-gutter: 2.5em,
   text("Titel:"),
-  text([Optimierung von Large-Language-Model basierten Datenextraktionsprozessen zur Strukturierung interner #box([E-Mail-Kommunikationsdaten])]),
+  text([Analyse der Einsatzmöglichkeiten von State-of-the-Art Large Graph Models gegenüber Large Language Models zur Verarbeitung von strukturierten Daten]),
   
   text("Verfasser:"),
   text(nameAuthor),

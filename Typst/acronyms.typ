@@ -2,11 +2,8 @@
   NLP: "Natural Language Processing",
   LLM: "Large Language Model",
   RIG: "Regional Implementation Group",
-  CRISP-DM: "Cross Industry Standard Process for Data Mining",
   AI: "Artificial Intelligence",
-  AE: "Account Executive",
   API: "Application Programming Interface",
-  MXP: "Multi Experience Platform",
   CRM: "Customer Relationship Management",
   aCMS: "Augmented Content Management System",
   GenAI: "Generative Artificial Intelligence",
@@ -20,5 +17,8 @@
   TTFT: "Time-To-First-Token",
   pp: "Prozentpunkt",
   KI: "Künstlicher Intelligenz",
-  KPI: "Key Performance Indicator"
+  KPI: "Key Performance Indicator",
+
+  LGM: "Large Graph Model",
+  GNN: "Graph Neural Network",
 )
