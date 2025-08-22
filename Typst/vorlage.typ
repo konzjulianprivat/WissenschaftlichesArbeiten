@@ -1,7 +1,5 @@
 #import "acronyms.typ": acronyms 
 #import "acronym-lib.typ": init-acronyms, print-acronyms, acr, acrpl, acrs, acrspl, acrl, acrlpl, acrf, acrfpl
-#import "variables.typ": variables
-#import "variables-lib.typ": init-variables, print-variables, var, varpl, vars, varspl, varl, varlpl, varf,varfpl
 #import "main.typ": main
 #import "appendix.typ": appendix
 
@@ -32,7 +30,7 @@
 // Define logo paths
 #let logo-left = "pictures/DHBW_MA_Logo.jpg"
 #let logo-right = "pictures/SAP_R_grad_scrn.jpg"
-#let title = "Analyse der Einsatzmöglichkeiten von State-of-the-Art Large Graph Models gegenüber Large Language Models zur Verarbeitung von strukturierten Daten"
+#let title = "Analyse von State-of-the-Art Large Graph Models und deren Architekturen zur Verarbeitung von strukturierten Daten"
 #let nameAuthor = "Julian Konz"
 
 // Define header and footer content
@@ -192,7 +190,6 @@
 #counter(page).update(1)
 
 #init-acronyms(acronyms)
-#init-variables(variables)
 #set heading(numbering: "I.",outlined: false)
 #show heading.where(level: 1): it => {
   set text(size: 18pt, weight: "bold")
@@ -216,7 +213,7 @@
 #set text(hyphenate: true, lang: "de")
 
 = Eidesstattliche Erklärung
-#align(left, text("Ich versichere hiermit, dass ich meine Projektarbeit mit dem Thema 'Analyse der Einsatzmöglichkeiten von State-of-the-Art Large Graph Models gegenüber Large Language Models zur Verarbeitung von strukturierten Daten selbstständig verfasst und keine anderen als die angegebenen Quellen und Hilfsmittel benutzt habe. Ich versichere zudem, dass die eingereichte elektronische Fassung mit der gedruckten Fassung übereinstimmt."))
+#align(left, text("Ich versichere hiermit, dass ich meine Projektarbeit mit dem Thema 'Analyse von State-of-the-Art Large Graph Models und deren Architekturen zur Verarbeitung von strukturierten Daten' selbstständig verfasst und keine anderen als die angegebenen Quellen und Hilfsmittel benutzt habe. Ich versichere zudem, dass die eingereichte elektronische Fassung mit der gedruckten Fassung übereinstimmt."))
 
 // Space for the signature
 #v(7em)
@@ -275,7 +272,7 @@ Um den Lesefluss zu verbessern, werden Abbildungen und Tabellen, die den Leseflu
   row-gutter: 18pt,
   column-gutter: 2.5em,
   text("Titel:"),
-  text([Analyse der Einsatzmöglichkeiten von State-of-the-Art Large Graph Models gegenüber Large Language Models zur Verarbeitung von strukturierten Daten]),
+  text([Analyse von State-of-the-Art Large Graph Models und deren Architekturen zur Verarbeitung von #box([strukturierten Daten])]),
   
   text("Verfasser:"),
   text(nameAuthor),
@@ -288,18 +285,18 @@ Um den Lesefluss zu verbessern, werden Abbildungen und Tabellen, die den Leseflu
 #v(1em)
 // Fasse hier die Arbeit und die Ergebnisse kurz und prägnant zusammen.
 
-Im Rahmen dieser Arbeit wird ein Proof of Concept zur automatisierten Extraktion strukturierter Reportingdaten aus E-Mails der SAP AI Regional Implementation Group durch Large Language Models entwickelt und optimiert.  
-Dies erfolgte entlang des Cross Industry Standard Process for Data Mining und evaluierte den Einfluss der Modellauswahl und Promptingstrategie auf die Datenqualität.
+Im Rahmen dieser Arbeit wird ein systematisches Review zu Large Graph Models (LGMs) durchgeführt, um deren Architekturen zur Verarbeitung strukturierter Daten zu untersuchen. Ausgangspunkt bildet die Analyse von 40 wissenschaftlichen Publikationen, von denen zehn nach definierten Kriterien vertieft #box([betrachtet wurden.])
 
-In einem experimentellen Aufbau werden drei Modelle (GPT-4o, o3-mini, o1) mit neun Prompting-Strategien (Baseline, Chain-of-Thought und Self-consistency, jeweils als Zero-/One- und Few-Shot-Prompt) verglichen. Die Analyse zeigte einen signifikanten Einfluss der Modellwahl auf die Extraktionsgenauigkeit. Das Modell o1 erzielte dabei die höchsten Ergebnisse gegenüber den anderen Modellen. Die beste Konfiguration erreichte ein Self-Consistency-One-Shot-Prompt des Modells OpenAI o1 mit einer Datenextraktionsgenauigkeit von 74% und einer Identifikationsgenauigkeit des zugehörigen Reporting-Eintrags von 95%.
+Die Ergebnisse zeigen zwei zentrale Optimierungsrichtungen: Ansätze zur Leistungssteigerung, etwa durch kontrastives Lernen und SimGRACE, sowie zur Erhöhung der Anwendungsvielfalt, beispielsweise durch PRODIGY oder Graph Retrieval-Augmented Generation (GRAG). Diese Ansätze verdeutlichen, dass Datenqualität und Modellgeneralität entscheidende Faktoren für die Leistungsfähigkeit von LGMs sind.
 
-Die entwickelte Modellierung erfüllt die von der SAP AI Regional Implementation Group definierten Qualitätskriterien für die automatisierte Datenextraktion. Auf Basis dieser Ergebnisse wird nach Validierung auf einem erweiterten Datensatz eine schrittweise Produktivnahme empfohlen.
+Hybride Architekturen wie Griffin, welche rekurrente Mechanismen mit Attention-Strukturen verbinden, vereinen beide Richtungen und zeigen damit einen vielversprechenden Weg für die Weiterentwicklung von LGMs auf.
 
-// Die Modellierung erreicht von der Abteilung definierte Qualitätskriterien für die automatisierte Datenextraktion, weswegen eine schrittweise Produktivnahme nach erfolgreicher Skalierung auf einen umfangreicheren und zeitlich aktuelleren Datensatz aussteht.
+// Im Rahmen dieser Arbeit wird ein Proof of Concept zur automatisierten Extraktion strukturierter Reportingdaten aus E-Mails der SAP AI Regional Implementation Group durch Large Language Models entwickelt und optimiert.  
+// Dies erfolgte entlang des Cross Industry Standard Process for Data Mining und evaluierte den Einfluss der Modellauswahl und Promptingstrategie auf die Datenqualität.
 
-// Aufgrund einer zu hohen Identifikationsrate falsch-positiver Reporting-Einträge erfolgt keine Produktivnahme des PoC, zeigt jedoch das Potential LLM-basierter Ansätze in der Datenextraktion aus E-Mails für weitere Untersuchungen.
+// In einem experimentellen Aufbau werden drei Modelle (GPT-4o, o3-mini, o1) mit neun Prompting-Strategien (Baseline, Chain-of-Thought und Self-consistency, jeweils als Zero-/One- und Few-Shot-Prompt) verglichen. Die Analyse zeigte einen signifikanten Einfluss der Modellwahl auf die Extraktionsgenauigkeit. Das Modell o1 erzielte dabei die höchsten Ergebnisse gegenüber den anderen Modellen. Die beste Konfiguration erreichte ein Self-Consistency-One-Shot-Prompt des Modells OpenAI o1 mit einer Datenextraktionsgenauigkeit von 74% und einer Identifikationsgenauigkeit des zugehörigen Reporting-Eintrags von 95%.
 
-// Damit übertrifft das System die geforderte Feldgenauigkeit von 70%, wird jedoch aufgrund einer zu hohen falsch-positiven Identifikationsrate nicht implementiert.
+// Die entwickelte Modellierung erfüllt die von der SAP AI Regional Implementation Group definierten Qualitätskriterien für die automatisierte Datenextraktion. Auf Basis dieser Ergebnisse wird nach Validierung auf einem erweiterten Datensatz eine schrittweise Produktivnahme empfohlen.
 
 //-----------------------------------------------------------------------------------
 // Inhaltsverzeichnis, Abbildungsverzeichnis, Tabellenverzeichnis
@@ -313,7 +310,7 @@ Die entwickelte Modellierung erfüllt die von der SAP AI Regional Implementation
   strong(it)
 }
 
-#show outline.entry.where(body: [Literaturverzeichnis] ): it => {
+#show outline.entry.where(body: [Literaturverzeichnis <literature>] ): it => {
     v(12pt, weak: true)
     strong(it)
     numbering("i")
@@ -344,21 +341,10 @@ Die entwickelte Modellierung erfüllt die von der SAP AI Regional Implementation
     title: "Tabellenverzeichnis",
     target: figure.where(kind: table)
   )
-#pagebreak()
-// Codeverzeichnis (List of Code) 
-  #outline(
-    title: "Promptverzeichnis",
-    target: figure.where(kind: "prompt")
-  )
 
 #pagebreak()
 // Abkürzungsverzeichnis (List of Abbreviations)
 #print-acronyms(5em)
-
-#pagebreak()
-// Variablenverzeichnis (List of Variables)
-#print-variables(5em)
-
 
 //-----------------------------------------------------------------------------------
 // Inhalt der Arbeit

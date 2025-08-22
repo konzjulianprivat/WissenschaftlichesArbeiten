@@ -2,6 +2,29 @@
 #import "variables-lib.typ": init-variables, print-variables, var, varpl, vars, varspl, varl, varlpl, varf,varfpl
 
 #let appendix = [
+
+  #set par(leading: 0.5em)
+
+#figure(caption: "Ergebnisse der Literaturrecherche", table(
+  columns: (auto, auto, auto, auto),
+  inset: 8pt,
+  align: horizon,
+  table.header(
+    [*Titel*], [*Autoren*], [*Jahr*], [*Quelle*]
+  ),
+  // Beispielzeilen
+  [#align(left, [Graph Attention Networks])],[Velickovic et al.], [2018], [ResearchGate],
+  [#align(left, [Graph Meets LLMs: Towards Large Graph Models])],[Zhang et al.], [2023], [arXiv],
+  [#align(left, [Let's Ask GNNs: Empowering Large Language Models with Graph In-Context Learning])],[Hu et al.], [2025], [ACL Antology],
+  [#align(left, [PRODIGY: Enabling In-context Learning Over Graphs])],[Huang et al.], [2023], [ACM Digital Library],
+  [#align(left, [RelBench: A Benchmark for Deep Learning on Relational Databases])],[Robinson et al.], [2024], [arXiv],
+  [#align(left, [Griffin: Mixing Gated Linear Recurrences with Local Attention for Efficient Language Models])],[De et al.], [2024], [arXiv],
+  [#align(left, [SimGRACE: A  Simple Framework for Graph Contrastive Learning without Data Augmentation])],[Xia et al.], [2022], [arXiv],
+  [#align(left, [GRAG: Graph Retrieval-Augmented Generation])],[Hu et al.], [2023], [ACL Antology],
+  [#align(left, [Graph Contrastive Learning with Augmentations])],[You et al.], [2021], [arXiv],
+))<LiteratureReviewResults>
+
+#set par(leading: 1.5em)
   // #v(12em)
   // #rotate(90deg, [#figure(caption: "SAP AI Services - Aufgaben der RIG " + cite(<sap2025rig>, supplement: "S. 8"),image("pictures/RIG_Tasks.png", width: 150%))<RIGPhases>])
 
